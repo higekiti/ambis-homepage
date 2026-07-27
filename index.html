@@ -1148,6 +1148,29 @@
         .cd-cta { font-size:10px; letter-spacing:0.1em; color:rgba(201,168,76,0.8); text-decoration:none; border:1px solid rgba(201,168,76,0.25); padding:3px 12px; transition:var(--transition); }
         .cd-cta:hover { border-color:var(--gold); color:var(--gold); }
         @media (max-width:540px) { .cd-soon { font-size:9px; } }
+
+        /* ===== MOBILE HERO: ロゴ＋CSS アニメーション ===== */
+        @media (max-width: 768px) {
+            #hero { height: auto; }
+            .hero-right {
+                display: flex;
+                order: -1;
+                min-height: 52vh;
+                padding: 96px 32px 44px;
+            }
+            .hero-left {
+                min-height: auto;
+                padding: 56px 36px 80px;
+            }
+            .ambis-hero-logo .logo-svg { display: none; }
+            .mobile-logo-png {
+                display: block;
+                animation: ambisMobileLogo 0.8s ease 0.3s both;
+            }
+            .ambis-hero-logo .tagline {
+                animation: ambisTaglineFade 0.6s ease 1.0s both;
+            }
+        }
     </style>
 
 </head>
@@ -1225,7 +1248,7 @@
         <div class="ambis-hero-logo" id="ambisHeroLogo">
             <div class="logo-col">
                 <div class="logo-area">
-          <img src="logo.png" alt="AMBIs Jiu-Jitsu Academy" class="mobile-logo-png">
+          <img src="logo_nobg.png" alt="AMBIs Jiu-Jitsu Academy" class="mobile-logo-png">
           <svg class="logo-svg" viewBox="0 0 1379 752" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <clipPath id="logoClip"><path id="logoClipPath" fill-rule="evenodd"/></clipPath>
