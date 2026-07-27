@@ -476,7 +476,8 @@
             letter-spacing: 0.06em;
             color: var(--logo-ink);
         }
-        /* モバイル：CSS軽量アニメーション（JSの描画アニメの代替） */
+        /* モバイル：PNGロゴ＋CSSアニメーション（SVGパスはJS依存のため非表示） */
+        .mobile-logo-png { display: none; width: 100%; height: auto; }
         @keyframes ambisMobileLogo {
             from { opacity: 0; transform: scale(0.95); }
             to   { opacity: 1; transform: scale(1); }
@@ -486,8 +487,9 @@
             to   { opacity: 1; transform: translateY(0); }
         }
         @media (max-width: 767px) {
-            .ambis-hero-logo .stroke-unit { display: none; }
-            .ambis-hero-logo #fillPath {
+            .ambis-hero-logo .logo-svg { display: none; }
+            .mobile-logo-png {
+                display: block;
                 animation: ambisMobileLogo 0.8s ease 0.2s both;
             }
             .ambis-hero-logo .tagline {
@@ -1223,6 +1225,7 @@
         <div class="ambis-hero-logo" id="ambisHeroLogo">
             <div class="logo-col">
                 <div class="logo-area">
+          <img src="logo.png" alt="AMBIs Jiu-Jitsu Academy" class="mobile-logo-png">
           <svg class="logo-svg" viewBox="0 0 1379 752" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <clipPath id="logoClip"><path id="logoClipPath" fill-rule="evenodd"/></clipPath>
