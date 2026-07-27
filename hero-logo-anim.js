@@ -14,6 +14,7 @@
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) return;
+  if (window.innerWidth < 768) return;
 
   var totalPerim = UNITS.reduce(function(s,u){ return s+u.perim; }, 0);
   var DRAW_DURATION = 1900;
