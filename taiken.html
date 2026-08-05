@@ -42,28 +42,15 @@
         .container { max-width: 860px; margin: 0 auto; padding: 0 28px; }
 
         /* ===== HEADER ===== */
-        header {
-            position: sticky; top: 0; z-index: 100;
-            background: var(--navy-dark);
-            border-bottom: 1px solid rgba(201,168,76,0.15);
-            height: 64px;
-            display: flex; align-items: center;
-        }
-        .header-inner {
-            max-width: 1100px; margin: 0 auto; padding: 0 28px;
-            width: 100%;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .header-logo {
-            font-family: var(--font-jp); font-weight: 700; font-size: 18px;
-            color: var(--cream); letter-spacing: 0.08em;
-        }
-        .header-logo span { font-size: 9px; letter-spacing: 0.2em; color: var(--gold); display: block; margin-top: -2px; }
-        .header-back {
-            font-size: 12px; color: rgba(245,240,232,0.6); letter-spacing: 0.08em;
-            display: flex; align-items: center; gap: 6px; transition: color .2s;
-        }
-        .header-back:hover { color: var(--gold); }
+        nav { background: var(--navy-dark); padding: 16px 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(201,168,76,0.15); }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; align-items: center; gap: 14px; }
+        .nav-logo img { height: 46px; width: auto; display: block; }
+        .nav-logo-sep { width: 1px; height: 20px; background: #C5A35A; opacity: 0.5; flex-shrink: 0; }
+        .nav-logo-sub { font-size: 11px; font-weight: 300; letter-spacing: 0.18em; color: #C5A35A; white-space: nowrap; }
+        @media (max-width: 640px) { .nav-logo img { height: 36px; } .nav-logo-sub { display: none; } }
+        .nav-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.6); transition: var(--transition); }
+        .nav-back:hover { color: var(--gold); }
 
         /* ===== PAGE HERO ===== */
         .page-hero { padding: 72px 0 60px; text-align: center; }
@@ -228,15 +215,19 @@
 <body>
 
 <!-- ===== HEADER ===== -->
-<header>
-    <div class="header-inner">
-        <a href="index.html" class="header-logo">
-            AMBIs
-            <span>JIU-JITSU ACADEMY</span>
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <img src="logo-white.svg" alt="AMBIs">
+            <span class="nav-logo-sep"></span>
+            <span class="nav-logo-sub">Jiu-Jitsu Academy</span>
         </a>
-        <a href="index.html" class="header-back">← トップページへ戻る</a>
+        <a href="index.html" class="nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+            トップページに戻る
+        </a>
     </div>
-</header>
+</nav>
 
 <!-- ===== PAGE HERO ===== -->
 <div class="page-hero">
