@@ -182,7 +182,7 @@
             --transition: all 0.3s ease;
         }
 
-        html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 120px; }
+        html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 120px; overflow-x: hidden; }
         @media (max-width: 768px) { html { scroll-padding-top: 100px; } }
 
         body {
@@ -1028,6 +1028,7 @@
             .instructor-photo-wrap { max-width: 280px; margin: 0 auto; }
             .class-grid    { grid-template-columns: 1fr; gap: 1px; }
             .plans-grid    { grid-template-columns: 1fr; gap: 1px; }
+            .other-cards   { grid-template-columns: 1fr !important; }
             .gallery-cs-grid { grid-template-columns: repeat(2, 1fr); }
             .access-grid   { grid-template-columns: 1fr; }
             .trial-inner   { grid-template-columns: 1fr; gap: 40px; }
