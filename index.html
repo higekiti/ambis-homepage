@@ -739,6 +739,12 @@
             transition: var(--transition);
         }
         .class-card:hover { background: var(--white); }
+        .class-card.cc-b  { border-left: 3px solid #C9A84C; }
+        .class-card.cc-a  { border-left: 3px solid var(--navy); }
+        .class-card.cc-fw { border-left: 3px solid #2d7a2d; }
+        .class-card.cc-b  .class-level { color: #7A6020; }
+        .class-card.cc-a  .class-level { color: var(--navy); }
+        .class-card.cc-fw .class-level { color: #1e5c1e; }
         .class-img {
             height: 200px; position: relative;
             display: flex; align-items: center; justify-content: center;
@@ -1422,7 +1428,7 @@
 
         <!-- 3クラス compact -->
         <div class="class-grid fi">
-            <div class="class-card">
+            <div class="class-card cc-b">
                 <div class="class-body">
                     <div class="class-level">Beginner Class</div>
                     <h3 class="class-name">初心者クラス</h3>
@@ -1434,7 +1440,7 @@
                     </div>
                 </div>
             </div>
-            <div class="class-card">
+            <div class="class-card cc-a">
                 <div class="class-body">
                     <div class="class-level">All Levels Class</div>
                     <h3 class="class-name">オールレベルクラス</h3>
@@ -1446,7 +1452,7 @@
                     </div>
                 </div>
             </div>
-            <div class="class-card">
+            <div class="class-card cc-fw">
                 <div class="class-body">
                     <div class="class-level">Open Mat</div>
                     <h3 class="class-name">フリーマット</h3>
