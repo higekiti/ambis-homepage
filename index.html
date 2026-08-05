@@ -38,7 +38,6 @@
         "postalCode": "862-0950",
         "addressCountry": "JP"
       },
-      "openingDate": "2026-10-01",
       "priceRange": "¥¥",
       "sport": "Brazilian Jiu-Jitsu",
       "sameAs": ["https://lin.ee/67nT6Qw2"],
@@ -280,7 +279,9 @@
             position: fixed;
             top: 36px; left: 0; right: 0;
             z-index: 1000;
-            transition: background 0.4s ease, box-shadow 0.4s ease;
+            background: rgba(15,30,53,0.55);
+            backdrop-filter: blur(6px);
+            transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
         }
         #navbar.scrolled {
             background: rgba(15,30,53,0.97);
@@ -545,7 +546,6 @@
         }
 
         /* ===== NUMBERS BAR ===== */
-        .numbers-bar {
             background: var(--navy);
             position: relative; z-index: 10;
             border-top: 1px solid rgba(201,168,76,0.35);
@@ -553,11 +553,9 @@
         .numbers-inner {
             display: grid; grid-template-columns: repeat(4, 1fr);
         }
-        .number-item {
             padding: 40px 24px; text-align: center;
             border-right: 1px solid rgba(245,240,232,0.08);
         }
-        .number-item:last-child { border-right: none; }
         .number-value {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             font-weight: 700;
@@ -667,12 +665,9 @@
             font-size: 14.5px; color: var(--text-muted); line-height: 1.95; margin-bottom: 18px;
         }
 
-        .target-list { display: flex; flex-direction: column; gap: 0; }
-        .target-item {
             display: flex; align-items: flex-start; gap: 14px;
             padding: 18px 0; border-bottom: 1px solid var(--cream);
         }
-        .target-item:last-child { border-bottom: none; }
         .target-icon {
             width: 44px; height: 44px;
             background: var(--navy);
@@ -809,6 +804,11 @@
         .sb-r  { background: rgba(100,80,180,0.09); color: #4a3a8a; }
         .sb-t  { background: var(--cream-dark);      color: var(--text-muted); font-style: italic; }
         .sched-note { text-align:center; font-size:12.5px; color:var(--text-muted); margin-top:14px; }
+        @media (max-width: 640px) {
+            .sched-daygrid { grid-template-columns: 1fr !important; }
+            .sched-weekdaygrid { grid-template-columns: 1fr !important; }
+            .campaign-cards { grid-template-columns: 1fr !important; max-width: 320px !important; }
+        }
 
         /* ===== MEMBERSHIP ===== */
         #membership { background: var(--cream-dark); }
@@ -1035,7 +1035,6 @@
             .nav-hamburger { display: flex; }
             .hero-display { font-size: clamp(42px, 10vw, 72px); }
             .numbers-inner { grid-template-columns: repeat(2, 1fr); }
-            .number-item:nth-child(2) { border-right: none; }
             .concept-grid  { grid-template-columns: 1fr; gap: 40px; }
             .concept-visual { height: 280px; }
             .cv-main  { width: 80%; height: 220px; }
@@ -1052,22 +1051,11 @@
             .trial-inner   { grid-template-columns: 1fr; gap: 40px; }
             .footer-inner  { grid-template-columns: 1fr; gap: 32px; }
             .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-            .bjj-strip-inner { grid-template-columns: 1fr; }
             .wc-inner { flex-direction: column; text-align: center; padding: 0; }
             .wc-cta { width: 100%; text-align: center; }
         }
 
         /* ===== BJJ INTRO STRIP ===== */
-        #bjj-intro { background: var(--navy-dark); padding: 68px 0; }
-        .bjj-strip-header { text-align: center; margin-bottom: 40px; }
-        .bjj-strip-header p { color: rgba(255,255,255,0.6); font-size: 14px; max-width: 480px; margin: 10px auto 0; line-height: 1.7; }
-        .bjj-strip-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.06); }
-        @media (max-width: 768px) { .bjj-strip-inner { grid-template-columns: 1fr; } .other-cards { grid-template-columns: 1fr !important; } #manners [style*="grid-template-columns:repeat(2"] { grid-template-columns: 1fr !important; } #manners [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; } }
-        .bjj-strip-item { background: var(--navy-dark); padding: 36px 28px; text-align: center; }
-        .bjj-strip-icon { margin-bottom: 16px; }
-        .bjj-strip-ttl { font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; margin-bottom: 10px; }
-        .bjj-strip-txt { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.75; margin: 0; }
-        .bjj-strip-cta { text-align: center; margin-top: 36px; }
 
         /* ===== WOMEN CALLOUT ===== */
         .women-callout { background: linear-gradient(135deg, #162440 0%, #1a3050 100%); padding: 48px 0; border-top: 1px solid rgba(197,163,90,0.18); border-bottom: 1px solid rgba(197,163,90,0.18); }
@@ -1168,7 +1156,7 @@
             <li><a href="#faq">よくある質問</a></li>
             <li><a href="#access">アクセス</a></li>
             <li><a href="manners.html">道場マナー</a></li>
-            <li><a href="#trial" class="nav-cta">体験・お問い合わせ</a></li>
+            <li><a href="#trial" class="nav-cta">先行登録・お問い合わせ</a></li>
         </ul>
         <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
             <span></span><span></span><span></span>
@@ -1187,14 +1175,14 @@
     <a href="#faq"        onclick="toggleNav()">よくある質問</a>
     <a href="#access"     onclick="toggleNav()">アクセス</a>
     <a href="manners.html" onclick="toggleNav()">道場マナー</a>
-    <a href="#trial"      onclick="toggleNav()" style="color:var(--gold);">お問い合わせ・先行登録 →</a>
+    <a href="#trial"      onclick="toggleNav()" style="color:var(--gold);">先行登録・お問い合わせ →</a>
 </div>
 
 <!-- ===== HERO ===== -->
 <section id="hero">
     <!-- Left: dark navy with display title -->
     <div class="hero-left">
-        <div class="hero-eyebrow">Kumamoto, Japan — BJJ Academy</div>
+        <div class="hero-eyebrow">熊本市水前寺 — BJJ Academy</div>
         <h1 class="hero-display">LIFE<br>WITH<br>JIU-<br>JITSU</h1>
         <p class="hero-desc">
             週末だけでいい。汗をかいて、笑って、仲間に出会う——<br>
@@ -1207,8 +1195,8 @@
         </div>
         <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:16px;">
             <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 先着25名・入会金無料</span>
-            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 2026年秋オープン</span>
-            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 初心者大歓迎</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 土日クラス・週末だけでOK</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 未経験者・大人から始める</span>
         </div>
     </div>
 
@@ -1255,53 +1243,41 @@
     </div>
 </section>
 
-<!-- ===== NUMBERS BAR ===== -->
-<div class="numbers-bar">
-    <div class="numbers-inner container" style="padding:0;max-width:none;">
-        <div class="number-item">
-            <div class="number-value">80<span class="unit">㎡</span></div>
-            <div class="number-label">広々としたマットスペース</div>
-        </div>
-        <div class="number-item">
-            <div class="number-value">3<span class="unit">クラス</span></div>
-            <div class="number-label">レベルに合わせたクラス構成</div>
-        </div>
-        <div class="number-item">
-            <div class="number-value">5<span class="unit">分</span></div>
-            <div class="number-label">水前寺電停より徒歩</div>
-        </div>
-        <div class="number-item">
-            <div class="number-value" style="font-size:clamp(22px,3.5vw,36px);letter-spacing:0.05em;">AUTUMN</div>
-            <div class="number-label">2026年グランドオープン</div>
-        </div>
-    </div>
-</div>
-
 <!-- ===== PRE-REGISTRATION ===== -->
 <section id="prereg">
     <div class="container">
         <div class="prereg-inner fi">
-            <span class="prereg-tag">GRAND OPEN — 2026年秋 ／ 先行登録受付中</span>
-            <h2 class="prereg-title">グランドオープン前に登録して、<br>入会金を無料に。</h2>
-            <p class="prereg-sub">先行登録者限定特典</p>
-            <div class="prereg-benefit">
-                <div class="prereg-benefit-col">
-                    <span class="prereg-benefit-label">通常入会金</span>
-                    <p class="prereg-benefit-from">¥11,000</p>
+            <span class="prereg-tag">OPENING CAMPAIGN — 2026年秋 ／ 先行登録受付中</span>
+            <h2 class="prereg-title">今から動いた人が、<br>一番お得。</h2>
+            <p class="prereg-sub">2つの特典を重ねて受け取れます</p>
+
+            <!-- 2枚カード -->
+            <div class="campaign-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:560px;margin:24px auto 0;">
+                <!-- カード1: 先行登録 -->
+                <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.4);padding:22px 16px;text-align:center;border-radius:2px;">
+                    <div style="font-size:10px;letter-spacing:0.15em;color:var(--gold);margin-bottom:8px;font-weight:600;">今すぐ ／ STEP 1</div>
+                    <div style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:14px;">先行登録特典</div>
+                    <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.4;text-decoration:line-through;">入会金 ¥11,000</div>
+                    <div style="font-size:30px;font-weight:800;color:var(--gold);line-height:1.1;margin-top:4px;">¥0</div>
+                    <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.2);font-size:11px;color:rgba(255,255,255,0.45);">先着25名限定</div>
                 </div>
-                <span class="prereg-benefit-arrow">→</span>
-                <div class="prereg-benefit-col">
-                    <span class="prereg-benefit-label">先行登録者</span>
-                    <p class="prereg-benefit-to">¥0</p>
+                <!-- カード2: オープン特典 -->
+                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);padding:22px 16px;text-align:center;border-radius:2px;">
+                    <div style="font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.45);margin-bottom:8px;font-weight:600;">グランドオープン時 ／ STEP 2</div>
+                    <div style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:14px;">オープン特典</div>
+                    <div style="font-size:14px;font-weight:700;color:var(--cream);line-height:1.4;">道着 ＋ 帯<br>プレゼント</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:6px;">¥20,000相当</div>
+                    <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);font-size:11px;color:rgba(255,255,255,0.35);">先着10名限定</div>
                 </div>
             </div>
-            <p class="prereg-limit">先着25名限定 ／ 2026年秋グランドオープン予定</p>
+            <p style="font-size:12px;color:rgba(201,168,76,0.7);margin-top:14px;letter-spacing:0.03em;">✦ 先行登録者はオープン時に両方の特典を受け取れます</p>
+
             <!-- カウンター: 登録が増えたら remaining の数字と bar の width% を手動更新 -->
-            <div class="prereg-counter">
+            <div class="prereg-counter" style="margin-top:20px;">
                 <div class="prereg-counter-bar-wrap">
                     <div class="prereg-counter-bar" id="prereqBar" style="width:0%"></div>
                 </div>
-                <p class="prereg-counter-text">残り<span class="prereg-counter-num" id="prereqRemaining">25</span>名</p>
+                <p class="prereg-counter-text">先行登録 残り<span class="prereg-counter-num" id="prereqRemaining">25</span>名</p>
             </div>
             <a href="https://lin.ee/67nT6Qw2" target="_blank" rel="noopener" class="prereg-btn">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
@@ -1345,53 +1321,6 @@
     </div>
 </section>
 
-<!-- ===== こんな方に来てほしい ===== -->
-<div style="background:var(--cream-dark);padding:48px 0 56px;">
-    <div class="container">
-        <div class="fi" style="text-align:center;margin-bottom:32px;">
-            <span class="section-tag">こんな方に来てほしい</span>
-            <div class="section-divider center"></div>
-        </div>
-        <div class="target-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
-            <div class="target-item">
-                <div class="target-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-                <div class="target-text">
-                    <strong>忙しいサラリーマン・会社員</strong>
-                    <span>運動不足の解消と、職場以外の仲間づくりができる場所</span>
-                </div>
-            </div>
-            <div class="target-item">
-                <div class="target-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                <div class="target-text">
-                    <strong>自分の時間を取り戻したい主婦</strong>
-                    <span>家事・育児から離れた自分だけの時間。女性も安心して参加できます</span>
-                </div>
-            </div>
-            <div class="target-item">
-                <div class="target-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                <div class="target-text">
-                    <strong>健康維持・ダイエット目的の方</strong>
-                    <span>楽しみながら続けられる運動習慣。みんなと一緒だから続く</span>
-                </div>
-            </div>
-            <div class="target-item">
-                <div class="target-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 12 15 2 8.5 12 2"/><polyline points="7 11.5 7 17.5 12 20.5 17 17.5 17 11.5"/></svg></div>
-                <div class="target-text">
-                    <strong>新しいつながりを作りたい方</strong>
-                    <span>肩書きのない場所で、年齢・職業を超えた仲間ができます</span>
-                </div>
-            </div>
-            <div class="target-item">
-                <div class="target-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                <div class="target-text">
-                    <strong>本気で強くなりたい方</strong>
-                    <span>大会出場も目指せる技術指導。自分のペースで確実にステップアップ</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- ===== CAMPAIGN BANNER ===== -->
 <div style="background:var(--gold);padding:0;">
     <div class="container" style="padding-top:0;padding-bottom:0;">
@@ -1405,37 +1334,6 @@
         </div>
     </div>
 </div>
-
-<!-- ===== BJJ INTRO ===== -->
-<section id="bjj-intro">
-    <div class="container">
-        <div class="bjj-strip-header fi">
-            <span class="section-tag">What is BJJ?</span>
-            <h2 class="section-title white" style="font-size:clamp(20px,3vw,26px);margin-bottom:0;">ブラジリアン柔術とは？</h2>
-            <p>格闘技と聞くと身構えてしまう方へ。柔術は「力」より「技術と頭」で動くスポーツです。</p>
-        </div>
-        <div class="bjj-strip-inner fi fi-d1">
-            <div class="bjj-strip-item">
-                <div class="bjj-strip-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-                <p class="bjj-strip-ttl">体力より技術</p>
-                <p class="bjj-strip-txt">打撃なし。体格差・筋力差を技と工夫でカバーできる、数少ないスポーツのひとつ。だから体力に自信がなくても大丈夫。</p>
-            </div>
-            <div class="bjj-strip-item">
-                <div class="bjj-strip-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><circle cx="5" cy="7" r="2.5"/><circle cx="19" cy="7" r="2.5"/></svg></div>
-                <p class="bjj-strip-ttl">年齢・性別関係なし</p>
-                <p class="bjj-strip-txt">中学生から60代まで、男女が同じマットで練習するのが普通の光景。「もう歳だから」は始められない理由にはならない。</p>
-            </div>
-            <div class="bjj-strip-item">
-                <div class="bjj-strip-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                <p class="bjj-strip-ttl">マットはサードプレイス</p>
-                <p class="bjj-strip-txt">職場でも家でもない、第三の居場所。肩書きのない人間関係が、知らぬ間に日常を豊かにしていく。</p>
-            </div>
-        </div>
-        <div class="bjj-strip-cta fi fi-d2">
-            <a href="bjj.html" style="display:inline-block;padding:11px 26px;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.65);font-size:12.5px;letter-spacing:0.1em;text-decoration:none;transition:var(--transition);" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)';this.style.color='rgba(255,255,255,0.65)'">柔術についてもっと詳しく →</a>
-        </div>
-    </div>
-</section>
 
 <!-- ===== VALUES (dark) ===== -->
 <section id="values" class="section-padding">
@@ -1453,8 +1351,8 @@
             <div class="value-card fi fi-d1">
                 <span class="value-bg-num">01</span>
                 <div class="value-icon"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-                <h3 class="value-ttl">初心者でも安心して始められる</h3>
-                <p class="value-dsc">格闘技未経験でも大丈夫。「怖そう」「痛そう」という不安は、体験してみると多くの方が消えます。最初の一歩を、一緒に踏み出しましょう。</p>
+                <h3 class="value-ttl">代表が直接指導。未経験から、丁寧に。</h3>
+                <p class="value-dsc">全クラス、代表インストラクターが直接指導します。大人の初心者・未経験者がメイン。「怖そう」「痛そう」というイメージは、体験してみると多くの方が拍子抜けします。</p>
             </div>
             <div class="value-card fi fi-d2">
                 <span class="value-bg-num">02</span>
@@ -1471,8 +1369,8 @@
             <div class="value-card fi fi-d4">
                 <span class="value-bg-num">04</span>
                 <div class="value-icon"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-                <h3 class="value-ttl">長く・楽しく続けられる仕組み</h3>
-                <p class="value-dsc">一般的なジムで続かない理由の多くは「仲間がいない」こと。AMBIsはコミュニティ型。顔なじみができると、来るのが楽しくなる。それが一番の続く理由。</p>
+                <h3 class="value-ttl">週末だけでOK。忙しい大人でも続けられる。</h3>
+                <p class="value-dsc">メインクラスは土日開催。平日が忙しいサラリーマンや主婦も無理なく通えます。「週1回から始める」でいい。顔なじみができると来るのが楽しくなる——それが一番の続く理由。</p>
             </div>
             <div class="value-card fi fi-d5">
                 <span class="value-bg-num">05</span>
@@ -1544,7 +1442,7 @@
                     <div class="class-tags">
                         <span class="class-tag">未経験OK</span>
                         <span class="class-tag">女性歓迎</span>
-                        <span class="class-tag">少人数制</span>
+                        <span class="class-tag">代表直接指導</span>
                     </div>
                 </div>
             </div>
@@ -1591,7 +1489,7 @@
             <h3 class="sched-heading">週間スケジュール（2026年秋〜 予定）</h3>
 
             <!-- 土日タイムライン -->
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,0.06);">
+            <div class="sched-daygrid" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,0.06);">
 
                 <!-- 土曜 -->
                 <div style="background:var(--cream-dark);">
@@ -1689,7 +1587,7 @@
             </div>
 
             <!-- 平日ブロック -->
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,0.06);margin-top:1px;">
+            <div class="sched-weekdaygrid" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,0.06);margin-top:1px;">
                 <!-- 平日フリーマット -->
                 <div style="background:var(--cream);padding:20px 20px 20px 0;">
                     <div style="display:flex;align-items:stretch;">
@@ -1733,7 +1631,7 @@
             <span class="section-tag">Progress</span>
             <h2 class="section-title white" style="margin-bottom:16px;">道場ができるまで</h2>
             <div class="section-divider center"></div>
-            <p class="section-subtitle white" style="max-width:480px;margin:0 auto 28px;">
+            <p class="section-subtitle white" style="white-space:nowrap;margin:0 auto 28px;">
                 80㎡のマットスペース＋更衣室・シャワー完備。工事の様子は随時更新中。
             </p>
             <a href="gallery.html" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-size:13px;font-weight:600;letter-spacing:0.1em;padding:11px 28px;text-decoration:none;transition:var(--transition);" onmouseover="this.style.background='rgba(201,168,76,0.08)'" onmouseout="this.style.background='transparent'">
@@ -2028,14 +1926,6 @@
     </div>
 </section>
 
-<!-- ===== MEMBER APP (TEASER) ===== -->
-<section style="background:var(--navy-dark);padding:32px 0;border-top:1px solid rgba(201,168,76,0.12);">
-    <div class="container" style="text-align:center;">
-        <p class="fi" style="font-size:13px;color:rgba(245,240,232,0.55);letter-spacing:0.06em;margin-bottom:12px;">入会者には会員専用アプリ（デジタル会員証・出席カレンダー・QRチェックイン）をご案内します。</p>
-        <a href="app.html" style="font-size:12px;color:var(--gold);letter-spacing:0.08em;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);padding-bottom:1px;">アプリの機能を詳しく見る →</a>
-    </div>
-</section>
-
 <!-- ===== TRIAL CTA ===== -->
 <section id="trial" class="section-padding">
     <div class="container">
@@ -2082,9 +1972,10 @@
                 </div>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:-8px;margin-bottom:20px;">体験後の入会は完全に任意です。当日その場で決める必要はありません。</p>
 
+                <form id="contact-form" novalidate onsubmit="submitForm(event)">
                 <div class="f-group">
-                    <label>お問い合わせ種別 <span class="req">*</span></label>
-                    <select id="f-type">
+                    <label for="f-type">お問い合わせ種別 <span class="req">*</span></label>
+                    <select id="f-type" name="inquiry_type">
                         <option value="">選択してください</option>
                         <option>初回無料体験を申し込みたい</option>
                         <option>ビジター参加（出稽古）を申し込みたい</option>
@@ -2094,20 +1985,20 @@
                     </select>
                 </div>
                 <div class="f-group">
-                    <label>お名前 <span class="req">*</span></label>
-                    <input type="text" id="f-name" placeholder="例：山田 太郎" required>
+                    <label for="f-name">お名前 <span class="req">*</span></label>
+                    <input type="text" id="f-name" name="name" placeholder="例：山田 太郎" required>
                 </div>
                 <div class="f-group">
-                    <label>メールアドレス <span class="req">*</span></label>
-                    <input type="email" id="f-email" placeholder="example@email.com" required>
+                    <label for="f-email">メールアドレス <span class="req">*</span></label>
+                    <input type="email" id="f-email" name="email" placeholder="example@email.com" required>
                 </div>
                 <div class="f-group">
-                    <label>電話番号</label>
-                    <input type="tel" id="f-tel" placeholder="090-0000-0000">
+                    <label for="f-tel">電話番号</label>
+                    <input type="tel" id="f-tel" name="tel" placeholder="090-0000-0000">
                 </div>
                 <div class="f-group">
-                    <label>希望日時・日程</label>
-                    <select id="f-schedule">
+                    <label for="f-schedule">希望日時・日程</label>
+                    <select id="f-schedule" name="schedule">
                         <option value="">選択してください</option>
                         <option>土曜日 09:30〜（初心者クラス）</option>
                         <option>土曜日 11:00〜（オールレベルクラス）</option>
@@ -2122,10 +2013,10 @@
                     </select>
                 </div>
                 <div class="f-group">
-                    <label>メッセージ（任意）</label>
-                    <textarea id="f-message" placeholder="ご不明な点・ご要望などお気軽にどうぞ。「初心者で不安」「出稽古の所属道場を伝えたい」「レンタルの空き確認をしたい」など何でもOKです。" required></textarea>
+                    <label for="f-message">メッセージ（任意）</label>
+                    <textarea id="f-message" name="message" placeholder="ご不明な点・ご要望などお気軽にどうぞ。「初心者で不安」「出稽古の所属道場を伝えたい」「レンタルの空き確認をしたい」など何でもOKです。"></textarea>
                 </div>
-                <button class="f-submit" id="f-submit" onclick="submitForm(event)">
+                <button class="f-submit" id="f-submit" type="submit">
                     送信する →
                 </button>
                 <p class="f-legal">
@@ -2135,6 +2026,7 @@
                     <p style="font-weight:700; color:#27893A; margin-bottom:8px;">✓ 送信が完了しました</p>
                     <p style="font-size:14px; color:#3A3A3A; line-height:1.8;">お問い合わせありがとうございます。<br>2営業日以内に <strong id="f-success-email"></strong> 宛にご連絡します。<br>しばらくお待ちください。</p>
                 </div>
+                </form>
             </div>
         </div>
     </div>
