@@ -924,9 +924,6 @@
         .trial-text h2 { font-size: clamp(26px, 4vw, 44px); font-weight: 700; color: var(--cream); line-height: 1.25; margin-bottom: 18px; }
         .trial-text h2 span { color: var(--gold); }
         .trial-text p { font-size: 14.5px; color: rgba(245,240,232,0.62); line-height: 1.9; margin-bottom: 22px; }
-        .trial-points { display: flex; flex-direction: column; gap: 11px; }
-        .trial-pt { display: flex; align-items: center; gap: 11px; color: rgba(245,240,232,0.78); font-size: 14px; }
-        .trial-pt::before { content: ''; width: 6px; height: 1px; background: var(--gold); flex-shrink: 0; }
 
         /* Form */
         .trial-form {
@@ -1106,22 +1103,6 @@
         .prereg-btn:hover { background: #05b34c; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(6,199,85,0.4); }
         .prereg-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 20px; line-height: 1.8; }
 
-        /* ===== 申込ステップ ===== */
-        .step-flow { display:flex; align-items:stretch; background:rgba(245,240,232,0.04); border:1px solid rgba(245,240,232,0.09); margin-bottom:56px; }
-        .step-item { flex:1; text-align:center; padding:36px 24px; border-right:1px solid rgba(245,240,232,0.09); }
-        .step-item:last-child { border-right:none; }
-        .step-sep { display:flex; align-items:center; padding:0 4px; color:rgba(201,168,76,0.2); font-size:18px; flex-shrink:0; }
-        .step-num { font-family:'Playfair Display',serif; font-style:italic; font-size:72px; color:rgba(201,168,76,0.18); line-height:1; margin-bottom:14px; }
-        .step-title { font-size:15px; font-weight:600; color:var(--cream); letter-spacing:0.06em; margin-bottom:8px; }
-        .step-desc { font-size:12px; color:rgba(245,240,232,0.42); line-height:1.7; margin:0; }
-        @media (max-width:640px) {
-            .step-flow { flex-direction:column; }
-            .step-item { border-right:none; border-bottom:1px solid rgba(245,240,232,0.09); padding:28px 24px; }
-            .step-item:last-child { border-bottom:none; }
-            .step-sep { display:none; }
-            .step-num { font-size:48px; margin-bottom:10px; }
-        }
-
         /* ===== OPENING SOON BAR ===== */
         #cd-bar {
             position: fixed; top:0; left:0; right:0; z-index:1001;
@@ -1206,7 +1187,7 @@
     <a href="#faq"        onclick="toggleNav()">よくある質問</a>
     <a href="#access"     onclick="toggleNav()">アクセス</a>
     <a href="manners.html" onclick="toggleNav()">道場マナー</a>
-    <a href="#trial"      onclick="toggleNav()" style="color:var(--gold);">体験・お問い合わせ →</a>
+    <a href="#trial"      onclick="toggleNav()" style="color:var(--gold);">お問い合わせ・先行登録 →</a>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -1221,13 +1202,13 @@
             2026年秋、熊本市水前寺にグランドオープン。
         </p>
         <div class="hero-buttons">
-            <a href="#trial"   class="btn btn-primary">無料体験を申し込む</a>
+            <a href="https://lin.ee/67nT6Qw2" target="_blank" rel="noopener" class="btn btn-primary">LINEで先行登録する</a>
             <a href="#concept" class="btn btn-outline">AMBIsを知る</a>
         </div>
         <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:16px;">
-            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 体験完全無料</span>
-            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 手ぶらでOK</span>
-            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 見学だけでもOK</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 先着25名・入会金無料</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 2026年秋オープン</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.06em;">✓ 初心者大歓迎</span>
         </div>
     </div>
 
@@ -1327,6 +1308,9 @@
                 LINEで友だち追加して登録する
             </a>
             <p class="prereg-note">LINEで友だち追加後、「先行登録」とメッセージを送ってください。<br>開業情報・体験申込の優先案内をいち早くお届けします。</p>
+            <p style="margin-top:14px;font-size:11.5px;color:rgba(255,255,255,0.35);letter-spacing:0.05em;">
+                ✦ &nbsp;LINE登録後すぐに<a href="app.html" style="color:rgba(201,168,76,0.7);text-decoration:underline;text-underline-offset:2px;">会員アプリのデモ版</a>を体験できます
+            </p>
         </div>
     </div>
 </section>
@@ -1743,36 +1727,17 @@
 </section>
 
 <!-- ===== GALLERY ===== -->
-<section id="gallery" class="section-padding">
+<section id="gallery" class="section-padding" style="padding-top:48px;padding-bottom:48px;">
     <div class="container">
-        <div class="gallery-header fi">
+        <div style="text-align:center;" class="fi">
             <span class="section-tag">Progress</span>
-            <h2 class="section-title white">道場ができるまで</h2>
+            <h2 class="section-title white" style="margin-bottom:16px;">道場ができるまで</h2>
             <div class="section-divider center"></div>
-            <p class="section-subtitle white" style="max-width:520px;margin:0 auto;">
-                開業前のリアルな姿をお届けします。80㎡のマットスペースと設備が、2026年秋に完成します。
+            <p class="section-subtitle white" style="max-width:480px;margin:0 auto 28px;">
+                80㎡のマットスペース＋更衣室・シャワー完備。工事の様子は随時更新中。
             </p>
-        </div>
-
-        <!-- Hero photo -->
-        <div class="fi">
-            <img src="gallery_01.jpg" alt="AMBIs Jiu-Jitsu Academy マットスペース 80㎡" class="gallery-hero">
-        </div>
-
-        <!-- 5-photo grid (3+2) -->
-        <div class="gallery-cs-grid fi" style="margin-top:2px;">
-            <img src="gallery_06.jpg" alt="入口・シューズラック">
-            <img src="gallery_02.jpg" alt="更衣室通路">
-            <img src="gallery_03.jpg" alt="更衣室内部">
-            <img src="gallery_04.jpg" alt="女子更衣室" style="object-position:center 30%;">
-            <img src="gallery_05.jpg" alt="男子更衣室" style="object-position:center 30%;">
-        </div>
-
-        <p class="gallery-cs-note" style="margin-top:20px;">2026年秋オープンに向けて、内装工事が着々と進んでいます。完成した道場の写真は随時更新予定。</p>
-        <div style="text-align:center;">
-            <a href="https://lin.ee/67nT6Qw2" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.3);color:rgba(245,240,232,0.5);font-size:12px;letter-spacing:0.1em;padding:10px 24px;text-decoration:none;transition:var(--transition);" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)';this.style.color='rgba(245,240,232,0.5)'">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.07 2 11.1c0 2.652 1.228 5.025 3.168 6.67l-.52 3.49a.4.4 0 0 0 .574.42l3.893-2.05A11.3 11.3 0 0 0 12 20.2c5.523 0 10-4.07 10-9.1S17.523 2 12 2z"/></svg>
-                LINE で最新情報を受け取る
+            <a href="gallery.html" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-size:13px;font-weight:600;letter-spacing:0.1em;padding:11px 28px;text-decoration:none;transition:var(--transition);" onmouseover="this.style.background='rgba(201,168,76,0.08)'" onmouseout="this.style.background='transparent'">
+                工事の様子・設備を見る →
             </a>
         </div>
     </div>
@@ -1848,7 +1813,7 @@
                     <li>更衣室・シャワー・ウォーターサーバー利用</li>
                 </ul>
                 <div class="plan-cta" style="padding:0 40px 40px;">
-                    <a href="#trial" class="btn btn-primary btn-block" style="padding:16px;font-size:16px;">無料体験を申し込む</a>
+                    <a href="#trial" class="btn btn-primary btn-block" style="padding:16px;font-size:16px;">初回無料体験を申し込む</a>
                 </div>
             </div>
 
@@ -2017,7 +1982,7 @@
                     格闘技・スポーツが全くの未経験ですが大丈夫ですか？
                     <span class="faq-icon">＋</span>
                 </div>
-                <div class="faq-a"><div class="faq-a-inner">もちろん大歓迎です。AMBIsには初心者専用クラスがあり、基本の動きから丁寧に指導します。実際、ブラジリアン柔術を始める方の多くが格闘技未経験です。「怖い・痛い・体力がない」という不安は、体験してみると多くの方が解消されます。まずは体験申込みをどうぞ。</div></div>
+                <div class="faq-a"><div class="faq-a-inner">もちろん大歓迎です。AMBIsには初心者専用クラスがあり、基本の動きから丁寧に指導します。実際、ブラジリアン柔術を始める方の多くが格闘技未経験です。「怖い・痛い・体力がない」という不安は、体験してみると多くの方が解消されます。</div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" onclick="toggleFaq(this)">
@@ -2028,392 +1993,46 @@
             </div>
             <div class="faq-item">
                 <div class="faq-q" onclick="toggleFaq(this)">
-                    何歳から始められますか？
+                    体が硬くても大丈夫ですか？
                     <span class="faq-icon">＋</span>
                 </div>
-                <div class="faq-a"><div class="faq-a-inner">中学生以上であれば、年齢・性別を問わずご参加いただけます。ブラジリアン柔術は体力差や年齢差を技術でカバーできるため、「体力に自信がない」「運動習慣がない」という方でも安心して始められます。自分のペースで、無理なく続けてください。</div></div>
+                <div class="faq-a"><div class="faq-a-inner">まったく問題ありません。ブラジリアン柔術は柔軟性よりも「技術と頭を使うスポーツ」です。体が硬い方でも練習を重ねるうちに自然と体は動くようになります。「ストレッチ代わりに始めてみたい」という方にもおすすめです。</div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" onclick="toggleFaq(this)">
-                    道着（ギ）は最初から必要ですか？
-                    <span class="faq-icon">＋</span>
-                </div>
-                <div class="faq-a"><div class="faq-a-inner">手ぶらでOKです。無料体験時は道着＋帯を無料でお貸しします。通常クラスやビジター参加時のレンタルは道着＋帯¥1,000、帯のみ¥500です。タオルは販売しています。道着の購入を検討される場合は、入会時にメーカーや価格帯についてアドバイスします。</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">
-                    仕事帰りでも通えますか？
-                    <span class="faq-icon">＋</span>
-                </div>
-                <div class="faq-a"><div class="faq-a-inner">現在は土日開催ですが、開業後に会員数やニーズに応じて平日夜間クラスも追加予定です。水前寺駅前という好立地のため、仕事帰りのルートで寄りやすい環境を目指しています。最新スケジュールは会員アプリ・LINEでお知らせします。</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">
-                    無料体験の後、勧誘されますか？
+                    体験の後、勧誘されますか？
                     <span class="faq-icon">＋</span>
                 </div>
                 <div class="faq-a"><div class="faq-a-inner">勧誘は一切しません。体験後の入会は完全にご自身の判断です。「良かったけれど今は無理」という場合も、もちろん問題ありません。まずは気軽に体を動かしに来てください。</div></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" onclick="toggleFaq(this)">
-                    体が硬くても大丈夫ですか？
+                    退会・休会はいつでもできますか？
                     <span class="faq-icon">＋</span>
                 </div>
-                <div class="faq-a"><div class="faq-a-inner">まったく問題ありません。ブラジリアン柔術は柔軟性よりも「技術と頭を使うスポーツ」です。体が硬い方でも練習を重ねるうちに自然と体は動くようになります。「ストレッチ代わりに始めてみたい」という方にもおすすめです。</div></div>
-            </div>
-            <!-- 残り9問（折りたたみ） -->
-            <div id="faq-extra" style="display:none;">
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        スパーリング（組み合う練習）は強制ですか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">強制ではありません。初心者クラスは基本動作の反復が中心で、スパーリングは本人が希望したときだけ行います。「まだ技術が足りない」「もう少し慣れてから」という自分のペースで判断してOKです。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        女性ですが、男性と組むことはありますか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">基本的に本人の希望を優先します。最初は同性パートナーや信頼できるメンバーとの練習から始められます。AMBIsは女性が安心して長く続けられる雰囲気づくりを大切にしています。不安なことは体験前に気軽にLINEでご相談ください。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        体力がなさすぎて、迷惑をかけないか心配です
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">その心配は不要です。体験クラスや初心者クラスは体力を使い切るような内容ではありません。きつければ自分のペースで休んでOKです。実際、長年運動習慣がゼロの状態から始めた方が多数います。「体力がないから行けない」ではなく「体力をつけに行く場所」です。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        見学だけでも大丈夫ですか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">もちろんです。「雰囲気を見てから決めたい」という方の見学は大歓迎です。練習の様子を見て、インストラクターと話してから体験・入会を検討していただけます。見学希望の方はLINE・フォーム・InstagramのDMからお気軽にご連絡ください。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        子供でも参加できますか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">現在は中学生以上を対象としています（保護者の同意が必要です）。小学生以下のキッズクラスは現時点では設けていませんが、会員数・ニーズに応じて今後検討予定です。詳細はLINEよりご相談ください。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        怪我のリスクはありますか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">スポーツである以上ゼロとは言えませんが、ブラジリアン柔術は「タップ（参った）」のルールがあり、相手が降参した時点で技を解く文化が徹底しています。打撃もないため、接触スポーツの中では比較的安全な部類に入ります。初心者クラスでは無理な力が入らないよう技術の段階的な指導を行い、強度を自分でコントロールできます。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        退会・休会はいつでもできますか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">退会は毎月15日までに道場窓口にてお申し出いただくと当月末での退会が可能です。仕事・家庭の都合で通えない時期は休会（在籍料 月¥500・通算最長1年）のご利用もできます。休会も同様に、前月15日までに道場窓口にてお申し出ください。長期縛りや違約金はありません。「続けられるか不安」という方こそ、まず体験から始めてみてください。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        入会後の連絡はどうやって来ますか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">入会時に会員専用アプリ（スマホ）をご案内します。お知らせ・スケジュール変更・大会情報・昇格記録はアプリ内で確認できます。緊急連絡や個別のやりとりはLINEで行います。アプリはGoogleアカウントでログインする仕組みで、難しい設定は不要です。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        入会後、道着はすぐに買わないといけませんか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">グランドオープンキャンペーン（先着10名）で道着・帯をプレゼントします。それ以外の方は、最初はレンタル（¥1,000/回）で1〜2ヶ月続けてみてから購入するのがおすすめです。道着のサイズ・メーカー選びはインストラクターがアドバイスするので安心してください。</div></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        休館日はいつですか？
-                        <span class="faq-icon">＋</span>
-                    </div>
-                    <div class="faq-a"><div class="faq-a-inner">年末年始・お盆・祝日は基本休館です。ただし状況に応じて臨時クラスを開催することがあります。臨時開催の情報はLINE公式アカウントおよびInstagramでお知らせします。</div></div>
-                </div>
-            </div>
-
-            <!-- 詳細を見るボタン -->
-            <div id="faq-toggle-wrap" style="text-align:center;margin-top:24px;">
-                <button onclick="(function(){var el=document.getElementById('faq-extra');var btn=document.getElementById('faq-toggle-btn');var open=el.style.display==='none';el.style.display=open?'block':'none';btn.textContent=open?'閉じる ∧':'詳細を見る（残り10問） ∨';})()" id="faq-toggle-btn" style="background:transparent;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-size:13px;font-weight:600;letter-spacing:0.08em;padding:12px 32px;cursor:pointer;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(201,168,76,0.08)';this.style.borderColor='rgba(201,168,76,0.7)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(201,168,76,0.4)'">
-                    詳細を見る（残り10問） ∨
-                </button>
+                <div class="faq-a"><div class="faq-a-inner">退会は毎月15日までに道場窓口にてお申し出いただくと当月末での退会が可能です。仕事・家庭の都合で通えない時期は休会（在籍料 月¥500・通算最長1年）のご利用もできます。長期縛りや違約金はありません。</div></div>
             </div>
         </div>
-        <div style="text-align:center;margin-top:48px;" class="fi">
-            <p style="font-size:15px;color:var(--text-muted);margin-bottom:20px;">疑問が解消されたら、次は体験へ。</p>
-            <a href="#trial" class="btn btn-navy">無料体験を申し込む（完全無料）</a>
+        <div style="text-align:center;margin-top:36px;" class="fi">
+            <a href="faq.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--text-muted);font-size:13px;letter-spacing:0.06em;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;transition:color .2s;" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--text-muted)'">
+                よくある質問をすべて見る（全17問）→
+            </a>
+        </div>
+        <div style="text-align:center;margin-top:40px;" class="fi">
+            <p style="font-size:15px;color:var(--text-muted);margin-bottom:20px;">疑問が解消されたら、次はLINEから先行登録を。</p>
+            <a href="https://lin.ee/67nT6Qw2" target="_blank" rel="noopener" class="btn btn-navy" style="display:inline-flex;align-items:center;gap:10px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.07 2 11.1c0 2.652 1.228 5.025 3.168 6.67l-.52 3.49a.4.4 0 0 0 .574.42l3.893-2.05A11.3 11.3 0 0 0 12 20.2c5.523 0 10-4.07 10-9.1S17.523 2 12 2z"/></svg>
+                LINEで先行登録する（先着25名・入会金無料）
+            </a>
         </div>
     </div>
 </section>
 
-<!-- ===== MEMBER APP ===== -->
-<section style="background:var(--navy-dark);padding:88px 0;">
-    <div class="container">
-        <div class="fi" style="text-align:center;margin-bottom:52px;">
-            <span class="section-tag" style="color:var(--gold);letter-spacing:0.2em;font-size:11px;font-weight:700;display:block;margin-bottom:16px;">MEMBER APP</span>
-            <h2 class="section-title white" style="margin-bottom:18px;">入会すると、アプリが使えます。</h2>
-            <div class="section-divider center" style="background:linear-gradient(90deg,transparent,var(--gold) 40%,transparent);margin-bottom:20px;"></div>
-            <p class="section-subtitle white" style="max-width:480px;margin:0 auto;">AMBIsでは会員専用アプリを提供します。自分の成長を可視化し、柔術を続けやすくするためのデジタルツールです。</p>
-        </div>
-
-        <!-- App mockup + Feature cards -->
-        <div style="display:flex;flex-wrap:wrap;gap:40px;max-width:940px;margin:0 auto 40px;align-items:center;justify-content:center;" class="fi">
-
-            <!-- ===== PHONE MOCKUP ===== -->
-            <div style="flex:0 0 200px;display:flex;justify-content:center;">
-                <svg viewBox="0 0 200 430" width="200" height="430" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 24px 52px rgba(0,0,0,0.6));display:block;">
-                    <defs>
-                        <linearGradient id="mobAccent" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="60%" stop-color="#c9a96e"/>
-                            <stop offset="100%" stop-color="#0a1628"/>
-                        </linearGradient>
-                        <clipPath id="mobNextClip">
-                            <rect x="14" y="63" width="172" height="65" rx="8"/>
-                        </clipPath>
-                        <clipPath id="mobCardClip">
-                            <rect x="14" y="132" width="172" height="151" rx="9"/>
-                        </clipPath>
-                        <clipPath id="mobAttClip">
-                            <rect x="14" y="287" width="172" height="101" rx="8"/>
-                        </clipPath>
-                    </defs>
-
-                    <!-- Phone body -->
-                    <rect x="1" y="1" width="198" height="428" rx="30" fill="#080F1F" stroke="rgba(201,168,76,0.28)" stroke-width="1.5"/>
-                    <!-- Screen bg -->
-                    <rect x="10" y="38" width="180" height="352" fill="#f0f2f7"/>
-                    <!-- Dynamic island -->
-                    <rect x="74" y="10" width="52" height="10" rx="5" fill="#060C18"/>
-                    <!-- Volume buttons -->
-                    <rect x="0" y="110" width="1.5" height="26" rx="0.75" fill="#1E3256"/>
-                    <rect x="0" y="142" width="1.5" height="26" rx="0.75" fill="#1E3256"/>
-                    <!-- Power button -->
-                    <rect x="198.5" y="128" width="1.5" height="48" rx="0.75" fill="#1E3256"/>
-
-                    <!-- === TOPBAR === -->
-                    <rect x="10" y="38" width="180" height="22" fill="#0a1628"/>
-                    <text x="20" y="51" font-family="'Noto Sans JP',Arial" font-size="10" font-weight="300" letter-spacing="4" fill="#c9a96e">AMBIS</text>
-                    <text x="20" y="57" font-family="Arial" font-size="3.5" letter-spacing="1.5" fill="#3a4a6a">JIU-JITSU ACADEMY · KUMAMOTO</text>
-                    <line x1="170" y1="43" x2="181" y2="43" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="170" y1="48" x2="181" y2="48" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="170" y1="53" x2="181" y2="53" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round"/>
-
-                    <!-- === NEXT CLASS CARD === -->
-                    <rect x="15" y="64" width="172" height="65" rx="8" fill="rgba(10,22,40,0.07)"/>
-                    <rect x="14" y="63" width="172" height="65" rx="8" fill="white"/>
-                    <g clip-path="url(#mobNextClip)">
-                        <rect x="14" y="63" width="172" height="19" fill="#0a1628"/>
-                        <text x="22" y="76" font-family="'Noto Sans JP',Arial" font-size="7.5" font-weight="300" letter-spacing="3" fill="#c9a96e">NEXT CLASS</text>
-                        <text x="100" y="94" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="11" font-weight="500" fill="#c9a96e">初心者クラス</text>
-                        <text x="100" y="108" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="9" font-weight="500" fill="#0a1628">明日</text>
-                        <text x="100" y="120" text-anchor="middle" font-family="Arial" font-size="7" fill="#6a7a9a">09:30〜10:30</text>
-                    </g>
-
-                    <!-- === MEMBER CARD === -->
-                    <rect x="15" y="133" width="172" height="151" rx="9" fill="rgba(10,22,40,0.08)"/>
-                    <rect x="14" y="132" width="172" height="151" rx="9" fill="white"/>
-                    <g clip-path="url(#mobCardClip)">
-                        <!-- Accent stripe -->
-                        <rect x="14" y="132" width="172" height="3" fill="url(#mobAccent)"/>
-                        <!-- Navy header -->
-                        <rect x="14" y="135" width="172" height="30" fill="#0a1628"/>
-                        <text x="22" y="150" font-family="'Noto Sans JP',Arial" font-size="10" font-weight="300" letter-spacing="4" fill="#c9a96e">AMBIS</text>
-                        <text x="22" y="159" font-family="Arial" font-size="3.5" letter-spacing="1.5" fill="#3a4a6a">JIU-JITSU ACADEMY · KUMAMOTO</text>
-                        <!-- MEMBER badge -->
-                        <rect x="148" y="141" width="34" height="13" rx="2" fill="none" stroke="rgba(201,168,76,0.7)" stroke-width="0.75"/>
-                        <text x="165" y="150" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="5.5" font-weight="300" letter-spacing="1" fill="#c9a96e">MEMBER</text>
-
-                        <!-- Avatar -->
-                        <circle cx="36" cy="191" r="21" fill="#f0f3f8" stroke="#e0e6f0" stroke-width="1.5"/>
-                        <text x="36" y="196" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="13" font-weight="700" fill="#0a1628">志</text>
-
-                        <!-- Member info -->
-                        <text x="65" y="179" font-family="'Noto Sans JP',Arial" font-size="9.5" font-weight="700" fill="#0a1628">志水 抄太</text>
-                        <text x="65" y="190" font-family="Arial" font-size="5.5" letter-spacing="1.5" fill="#aab0c0">SHIMIZU SHOTA</text>
-                        <!-- Belt bar (white belt) -->
-                        <rect x="65" y="196" width="28" height="5.5" rx="1.5" fill="#cccccc"/>
-                        <text x="98" y="202" font-family="'Noto Sans JP',Arial" font-size="6.5" fill="#6a7a9a">白帯</text>
-                        <!-- Stripe dots (4 empty) -->
-                        <rect x="65" y="206" width="7" height="7" rx="1" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.75"/>
-                        <rect x="74" y="206" width="7" height="7" rx="1" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.75"/>
-                        <rect x="83" y="206" width="7" height="7" rx="1" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.75"/>
-                        <rect x="92" y="206" width="7" height="7" rx="1" fill="#f0f0f0" stroke="#e0e0e0" stroke-width="0.75"/>
-
-                        <!-- Stats divider -->
-                        <line x1="14" y1="217" x2="186" y2="217" stroke="#f0f0f0" stroke-width="1"/>
-
-                        <!-- Stats row -->
-                        <text x="57" y="231" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="13" font-weight="500" fill="#0a1628">12</text>
-                        <text x="57" y="242" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="5" fill="#aab0c0">総出席</text>
-                        <line x1="100" y1="221" x2="100" y2="245" stroke="#f0f0f0" stroke-width="1"/>
-                        <text x="100" y="231" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="9" font-weight="500" fill="#0a1628">白帯</text>
-                        <text x="100" y="242" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="5" fill="#aab0c0">現在の帯</text>
-                        <line x1="143" y1="221" x2="143" y2="245" stroke="#f0f0f0" stroke-width="1"/>
-                        <text x="162" y="231" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="13" font-weight="500" fill="#0a1628">3</text>
-                        <text x="162" y="242" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="5" fill="#aab0c0">在籍ヶ月</text>
-
-                        <!-- Footer divider -->
-                        <line x1="14" y1="248" x2="186" y2="248" stroke="#f0f0f0" stroke-width="1"/>
-
-                        <!-- Footer (#fafafa) -->
-                        <rect x="14" y="249" width="172" height="34" fill="#fafafa"/>
-                        <text x="22" y="260" font-family="'Noto Sans JP',Arial" font-size="5" font-weight="300" letter-spacing="2" fill="#aab0c0">MEMBER ID</text>
-                        <text x="22" y="271" font-family="'Noto Sans JP',Arial" font-size="9.5" font-weight="400" letter-spacing="2" fill="#c9a96e">AMB-0000</text>
-                        <text x="22" y="279" font-family="Arial" font-size="5" fill="#aab0c0">入会日　2026.10.01</text>
-
-                        <!-- QR box (30x30) - unchanged design -->
-                        <rect x="143" y="252" width="30" height="30" rx="4" fill="white" stroke="#e8e8e8" stroke-width="0.75"/>
-                        <rect x="146" y="255" width="9" height="9" rx="1" fill="#0a1628"/>
-                        <rect x="148" y="257" width="5" height="5" fill="white"/>
-                        <rect x="158" y="255" width="9" height="9" rx="1" fill="#0a1628"/>
-                        <rect x="160" y="257" width="5" height="5" fill="white"/>
-                        <rect x="146" y="267" width="9" height="9" rx="1" fill="#0a1628"/>
-                        <rect x="148" y="269" width="5" height="5" fill="white"/>
-                        <rect x="157" y="258" width="2" height="2" fill="#0a1628"/>
-                        <rect x="159" y="265" width="2" height="2" fill="#0a1628"/>
-                        <rect x="157" y="269" width="3" height="2" fill="#0a1628"/>
-                        <rect x="157" y="272" width="2" height="2" fill="#0a1628"/>
-                        <rect x="159" y="274" width="4" height="2" fill="#0a1628"/>
-                        <rect x="157" y="267" width="2" height="2" fill="#0a1628"/>
-                        <rect x="160" y="269" width="3" height="4" fill="#0a1628"/>
-                    </g>
-
-                    <!-- === ATTENDANCE === -->
-                    <rect x="15" y="288" width="172" height="101" rx="8" fill="rgba(10,22,40,0.07)"/>
-                    <rect x="14" y="287" width="172" height="101" rx="8" fill="white"/>
-                    <g clip-path="url(#mobAttClip)">
-                        <!-- Navy header -->
-                        <rect x="14" y="287" width="172" height="19" fill="#0a1628"/>
-                        <text x="22" y="300" font-family="'Noto Sans JP',Arial" font-size="7.5" font-weight="300" letter-spacing="3" fill="#c9a96e">ATTENDANCE</text>
-
-                        <!-- Month tabs -->
-                        <rect x="22" y="308" width="17" height="10" rx="5" fill="none" stroke="#d0d5e0" stroke-width="0.75"/>
-                        <text x="30" y="316" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="5" fill="#aab0c0">5月</text>
-                        <rect x="43" y="308" width="17" height="10" rx="5" fill="none" stroke="#d0d5e0" stroke-width="0.75"/>
-                        <text x="51" y="316" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="5" fill="#aab0c0">6月</text>
-                        <rect x="64" y="308" width="17" height="10" rx="5" fill="#0a1628"/>
-                        <text x="72" y="316" text-anchor="middle" font-family="'Noto Sans JP',Arial" font-size="5" fill="white">7月</text>
-
-                        <!-- Day labels -->
-                        <text x="46" y="328" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#e74c3c">日</text>
-                        <text x="64" y="328" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#aab0c0">月</text>
-                        <text x="82" y="328" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#aab0c0">火</text>
-                        <text x="100" y="328" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#aab0c0">水</text>
-                        <text x="118" y="328" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#aab0c0">木</text>
-                        <text x="136" y="328" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#3a5fc8">金</text>
-                        <text x="154" y="328" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#3a5fc8">土</text>
-
-                        <!-- Row 1: 1(Wed)〜4(Sat att) -->
-                        <text x="100" y="340" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">1</text>
-                        <text x="118" y="340" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">2</text>
-                        <text x="136" y="340" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">3</text>
-                        <circle cx="154" cy="337" r="6.5" fill="#0a1628"/>
-                        <text x="154" y="340" text-anchor="middle" font-family="Arial" font-size="6" fill="white">4</text>
-
-                        <!-- Row 2: 5(Sun)〜11(Sat) -->
-                        <circle cx="46" cy="351" r="6.5" fill="#0a1628"/>
-                        <text x="46" y="354" text-anchor="middle" font-family="Arial" font-size="6" fill="white">5</text>
-                        <text x="64" y="354" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">6</text>
-                        <text x="82" y="354" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">7</text>
-                        <text x="100" y="354" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">8</text>
-                        <text x="118" y="354" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">9</text>
-                        <text x="136" y="354" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">10</text>
-                        <circle cx="154" cy="351" r="6.5" fill="#0a1628"/>
-                        <text x="154" y="354" text-anchor="middle" font-family="Arial" font-size="6" fill="white">11</text>
-
-                        <!-- Row 3: 12〜18 -->
-                        <circle cx="46" cy="365" r="6.5" fill="#0a1628"/>
-                        <text x="46" y="368" text-anchor="middle" font-family="Arial" font-size="6" fill="white">12</text>
-                        <text x="64" y="368" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">13</text>
-                        <text x="82" y="368" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">14</text>
-                        <text x="100" y="368" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">15</text>
-                        <text x="118" y="368" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">16</text>
-                        <text x="136" y="368" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">17</text>
-                        <circle cx="154" cy="365" r="6.5" fill="#0a1628"/>
-                        <text x="154" y="368" text-anchor="middle" font-family="Arial" font-size="6" fill="white">18</text>
-
-                        <!-- Row 4: 19〜25 / 23=today -->
-                        <circle cx="46" cy="379" r="6.5" fill="#0a1628"/>
-                        <text x="46" y="382" text-anchor="middle" font-family="Arial" font-size="6" fill="white">19</text>
-                        <text x="64" y="382" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">20</text>
-                        <text x="82" y="382" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">21</text>
-                        <text x="100" y="382" text-anchor="middle" font-family="Arial" font-size="6" fill="#aab0c0">22</text>
-                        <circle cx="118" cy="379" r="6.5" fill="none" stroke="#c9a96e" stroke-width="1.5"/>
-                        <text x="118" y="382" text-anchor="middle" font-family="Arial" font-size="6" fill="#6a7a9a">23</text>
-                        <text x="136" y="382" text-anchor="middle" font-family="Arial" font-size="6" fill="#d0d5e0">24</text>
-                        <text x="154" y="382" text-anchor="middle" font-family="Arial" font-size="6" fill="#d0d5e0">25</text>
-                    </g>
-
-                    <!-- Home indicator -->
-                    <rect x="80" y="394" width="40" height="3" rx="1.5" fill="rgba(255,255,255,0.12)"/>
-                </svg>
-
-            </div>
-
-            <!-- FEATURE CARDS -->
-            <div style="flex:1;min-width:280px;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
-
-                <!-- デジタル会員証 -->
-                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);padding:28px 22px;transition:background .2s;">
-                    <div style="color:var(--gold);margin-bottom:16px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="14" x2="10" y2="14"/></svg>
-                    </div>
-                    <div style="font-size:10px;letter-spacing:0.18em;color:var(--gold);margin-bottom:8px;font-weight:700;">DIGITAL ID</div>
-                    <div style="font-size:15px;font-weight:700;color:var(--cream);margin-bottom:10px;">デジタル会員証</div>
-                    <p style="font-size:12px;color:rgba(245,240,232,0.52);line-height:1.8;">帯・ストライプ・在籍期間・総出席数をいつでも確認。白帯からの軌跡が全部残ります。</p>
-                </div>
-
-                <!-- QRチェックイン -->
-                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);padding:28px 22px;">
-                    <div style="color:var(--gold);margin-bottom:16px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h3v-3m0 3v3m-3 0h3"/></svg>
-                    </div>
-                    <div style="font-size:10px;letter-spacing:0.18em;color:var(--gold);margin-bottom:8px;font-weight:700;">QR CHECK-IN</div>
-                    <div style="font-size:15px;font-weight:700;color:var(--cream);margin-bottom:10px;">QRチェックイン</div>
-                    <p style="font-size:12px;color:rgba(245,240,232,0.52);line-height:1.8;">スマホのQRコードを道場のタブレットにかざすだけ。受付がスムーズに完了します。</p>
-                </div>
-
-                <!-- 出席カレンダー -->
-                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);padding:28px 22px;">
-                    <div style="color:var(--gold);margin-bottom:16px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    </div>
-                    <div style="font-size:10px;letter-spacing:0.18em;color:var(--gold);margin-bottom:8px;font-weight:700;">ATTENDANCE</div>
-                    <div style="font-size:15px;font-weight:700;color:var(--cream);margin-bottom:10px;">出席カレンダー</div>
-                    <p style="font-size:12px;color:rgba(245,240,232,0.52);line-height:1.8;">直近3ヶ月の出席履歴をカレンダーで表示。「今月何回来たか」が一目でわかります。</p>
-                </div>
-
-                <!-- お知らせ・スケジュール -->
-                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);padding:28px 22px;">
-                    <div style="color:var(--gold);margin-bottom:16px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                    </div>
-                    <div style="font-size:10px;letter-spacing:0.18em;color:var(--gold);margin-bottom:8px;font-weight:700;">NEWS & SCHEDULE</div>
-                    <div style="font-size:15px;font-weight:700;color:var(--cream);margin-bottom:10px;">お知らせ・スケジュール</div>
-                    <p style="font-size:12px;color:rgba(245,240,232,0.52);line-height:1.8;">スケジュール変更・大会情報・道場からのお知らせをアプリ内でいつでも確認できます。</p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="fi" style="text-align:center;margin-bottom:16px;">
-            <a href="https://lin.ee/67nT6Qw2" target="_blank" rel="noopener"
-               style="display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;font-size:13px;font-weight:700;letter-spacing:0.06em;padding:14px 32px;text-decoration:none;border-radius:3px;transition:opacity .2s;"
-               onmouseover="this.style.opacity='0.85'"
-               onmouseout="this.style.opacity='1'">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.07 2 11.1c0 2.652 1.228 5.025 3.168 6.67l-.52 3.49a.4.4 0 0 0 .574.42l3.893-2.05A11.3 11.3 0 0 0 12 20.2c5.523 0 10-4.07 10-9.1S17.523 2 12 2z"/></svg>
-                LINE登録してデモアプリを体験する
-            </a>
-        </div>
-
-        <div class="fi" style="text-align:center;">
-            <p style="font-size:12px;color:rgba(245,240,232,0.5);letter-spacing:0.04em;margin-bottom:6px;">登録後、すぐにデモアプリを体験できます</p>
-            <p style="font-size:12px;color:rgba(245,240,232,0.35);letter-spacing:0.04em;">※ 会員アプリは入会時にご案内します。Googleアカウントでログインするだけで利用開始できます。</p>
-        </div>
+<!-- ===== MEMBER APP (TEASER) ===== -->
+<section style="background:var(--navy-dark);padding:32px 0;border-top:1px solid rgba(201,168,76,0.12);">
+    <div class="container" style="text-align:center;">
+        <p class="fi" style="font-size:13px;color:rgba(245,240,232,0.55);letter-spacing:0.06em;margin-bottom:12px;">入会者には会員専用アプリ（デジタル会員証・出席カレンダー・QRチェックイン）をご案内します。</p>
+        <a href="app.html" style="font-size:12px;color:var(--gold);letter-spacing:0.08em;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);padding-bottom:1px;">アプリの機能を詳しく見る →</a>
     </div>
 </section>
 
@@ -2421,81 +2040,35 @@
 <section id="trial" class="section-padding">
     <div class="container">
 
-        <!-- 申込の流れ 3ステップ -->
-        <div class="step-flow fi">
-            <div class="step-item">
-                <div class="step-num">1</div>
-                <div class="step-title">まずはご連絡を</div>
-                <p class="step-desc">フォーム・LINE・<br>Instagram DMどれでも</p>
-            </div>
-            <div class="step-sep">›</div>
-            <div class="step-item">
-                <div class="step-num">2</div>
-                <div class="step-title">2営業日以内に返信</div>
-                <p class="step-desc">日程の確認・<br>ご質問への対応</p>
-            </div>
-            <div class="step-sep">›</div>
-            <div class="step-item">
-                <div class="step-num">3</div>
-                <div class="step-title">当日、体験へ</div>
-                <p class="step-desc">手ぶらOK・完全無料<br>当日入会不要</p>
-            </div>
-        </div>
-
         <div class="trial-inner">
             <!-- Left text -->
             <div class="trial-text fi">
                 <span class="section-tag">Contact</span>
-                <h2>まず、体験してみよう。<br><span>無料体験、随時受付中。</span></h2>
+                <h2>お問い合わせ、<br><span>先行登録はこちらから。</span></h2>
                 <p>
-                    格闘技が初めてでも、運動が苦手でも、まずは一度マットに立ってみてください。
-                    体験は完全無料。勧誘は一切しません。<br>
-                    お問い合わせはフォーム・LINE・Instagram DMのどれからでもOKです。ビジター参加・レンタルスペースのご相談もお気軽にどうぞ。
+                    柔術が初めてでも、まず気軽にご連絡ください。<br>
+                    体験・入会・ビジター参加・レンタルスペースのご相談はすべてこちらから。<br>
+                    手ぶらでOK。勧誘は一切しません。
                 </p>
-                <!-- 体験の流れ -->
-                <div style="margin:28px 0 24px;">
-                    <p style="font-size:10px;letter-spacing:0.2em;color:var(--gold);margin-bottom:16px;font-weight:400;">WHAT TO EXPECT — 当日の流れ</p>
-                    <div>
-                        <div style="display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(245,240,232,0.07);">
-                            <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--gold);line-height:1;flex-shrink:0;width:24px;">1</span>
-                            <div><strong style="display:block;font-size:13px;color:var(--cream);margin-bottom:2px;">受付・着替え</strong><span style="font-size:12px;color:rgba(245,240,232,0.48);">道着・帯は無料でお貸しします（体験時のみ）。動きやすい服でもOK。更衣室完備。</span></div>
-                        </div>
-                        <div style="display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(245,240,232,0.07);">
-                            <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--gold);line-height:1;flex-shrink:0;width:24px;">2</span>
-                            <div><strong style="display:block;font-size:13px;color:var(--cream);margin-bottom:2px;">インストラクターと事前説明</strong><span style="font-size:12px;color:rgba(245,240,232,0.48);">不安なこと・目的・体の状態など、気軽に話してください。</span></div>
-                        </div>
-                        <div style="display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(245,240,232,0.07);">
-                            <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--gold);line-height:1;flex-shrink:0;width:24px;">3</span>
-                            <div><strong style="display:block;font-size:13px;color:var(--cream);margin-bottom:2px;">基本動作を体験（約60分）</strong><span style="font-size:12px;color:rgba(245,240,232,0.48);">受け身・基本ポジション・簡単な技を体験。スパーリングは任意。</span></div>
-                        </div>
-                        <div style="display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(245,240,232,0.07);">
-                            <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--gold);line-height:1;flex-shrink:0;width:24px;">4</span>
-                            <div><strong style="display:block;font-size:13px;color:var(--cream);margin-bottom:2px;">疑問・質問タイム</strong><span style="font-size:12px;color:rgba(245,240,232,0.48);">気になること・入会について何でもどうぞ。このあと勧誘はしません。</span></div>
-                        </div>
-                        <div style="display:flex;gap:16px;align-items:flex-start;padding:12px 0;">
-                            <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--gold);line-height:1;flex-shrink:0;width:24px;">5</span>
-                            <div><strong style="display:block;font-size:13px;color:var(--cream);margin-bottom:2px;">解散・自由解散</strong><span style="font-size:12px;color:rgba(245,240,232,0.48);">入会はご自身のペースで。その場で決める必要はありません。</span></div>
-                        </div>
-                    </div>
-                </div>
+                <p style="margin-top:16px;">
+                    <a href="taiken.html" style="font-size:13px;color:var(--gold);letter-spacing:0.06em;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);padding-bottom:2px;">体験の流れ・当日の様子を詳しく見る →</a>
+                </p>
 
-                <div class="trial-points">
-                    <div class="trial-pt">体験費用は完全無料</div>
-                    <div class="trial-pt">道着・帯 無料貸し出し（体験時）　手ぶらでOK</div>
-                    <div class="trial-pt">一人での参加でも安心できる雰囲気</div>
-                    <div class="trial-pt">男女ともに歓迎・中学生以上</div>
-                    <div class="trial-pt">ビジター参加（出稽古）も受付中</div>
-                    <div class="trial-pt">レンタルスペースのご利用もお気軽に</div>
-                </div>
-
-                <!-- LINE友だち追加 -->
+                <!-- LINE / Instagram -->
                 <div style="margin-top:32px;padding-top:28px;border-top:1px solid rgba(245,240,232,0.12);">
-                    <p style="font-size:12.5px;color:rgba(245,240,232,0.5);margin-bottom:14px;letter-spacing:0.04em;">気軽に相談したい方はLINEからどうぞ</p>
-                    <a href="https://lin.ee/67nT6Qw2" target="_blank" rel="noopener"
-                       style="display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;padding:12px 22px;font-size:14px;font-weight:600;letter-spacing:0.04em;transition:var(--transition);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.07 2 11.1c0 2.652 1.228 5.025 3.168 6.67l-.52 3.49a.4.4 0 0 0 .574.42l3.893-2.05A11.3 11.3 0 0 0 12 20.2c5.523 0 10-4.07 10-9.1S17.523 2 12 2z"/></svg>
-                        LINE で友だち追加
-                    </a>
+                    <p style="font-size:12.5px;color:rgba(245,240,232,0.5);margin-bottom:14px;letter-spacing:0.04em;">先行登録・気軽な相談はLINEまたはInstagramからどうぞ</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+                        <a href="https://lin.ee/67nT6Qw2" target="_blank" rel="noopener"
+                           style="display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;padding:12px 22px;font-size:14px;font-weight:600;letter-spacing:0.04em;transition:var(--transition);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.07 2 11.1c0 2.652 1.228 5.025 3.168 6.67l-.52 3.49a.4.4 0 0 0 .574.42l3.893-2.05A11.3 11.3 0 0 0 12 20.2c5.523 0 10-4.07 10-9.1S17.523 2 12 2z"/></svg>
+                            LINEで友だち追加
+                        </a>
+                        <a href="https://www.instagram.com/still.weekend_2026/" target="_blank" rel="noopener"
+                           style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--cream);padding:11px 20px;font-size:14px;font-weight:600;letter-spacing:0.04em;border:1px solid rgba(245,240,232,0.25);transition:var(--transition);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+                            Instagram DM
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -2513,7 +2086,7 @@
                     <label>お問い合わせ種別 <span class="req">*</span></label>
                     <select id="f-type">
                         <option value="">選択してください</option>
-                        <option>無料体験を申し込みたい</option>
+                        <option>初回無料体験を申し込みたい</option>
                         <option>ビジター参加（出稽古）を申し込みたい</option>
                         <option>レンタルスペースについて聞きたい</option>
                         <option>入会について聞きたい</option>
@@ -2631,10 +2204,10 @@
                     <span class="a-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></span>
                     <div class="a-body">
                         <strong>Contact</strong>
-                        <span>お問い合わせは体験申込フォームよりどうぞ</span>
+                        <span>お問い合わせはフォーム・LINE・Instagram DMよりどうぞ</span>
                     </div>
                 </div>
-                <a href="#trial" class="btn btn-navy" style="margin-top:28px;">体験申込・お問い合わせはこちら</a>
+                <a href="#trial" class="btn btn-navy" style="margin-top:28px;">お問い合わせ・先行登録はこちら</a>
             </div>
 
             <div class="map-wrap">
@@ -2702,7 +2275,7 @@
             <div class="f-col">
                 <h4>Info</h4>
                 <ul>
-                    <li><a href="#trial">無料体験申込</a></li>
+                    <li><a href="#trial">お問い合わせ</a></li>
                     <li><a href="#faq">よくある質問</a></li>
                     <li><a href="#access">アクセス</a></li>
                     <li><a href="privacy.html">プライバシーポリシー</a></li>
