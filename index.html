@@ -40,7 +40,7 @@
       },
       "priceRange": "¥¥",
       "sport": "Brazilian Jiu-Jitsu",
-      "sameAs": ["https://lin.ee/67nT6Qw2"],
+      "sameAs": ["https://lin.ee/67nT6Qw2", "https://www.instagram.com/still.weekend_2026/"],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -545,26 +545,7 @@
             100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
         }
 
-        /* ===== NUMBERS BAR ===== */
-            background: var(--navy);
-            position: relative; z-index: 10;
-            border-top: 1px solid rgba(201,168,76,0.35);
-        }
-        .numbers-inner {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-        }
-            padding: 40px 24px; text-align: center;
-            border-right: 1px solid rgba(245,240,232,0.08);
-        }
-        .number-value {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-weight: 700;
-            font-size: 52px; color: var(--cream); line-height: 1; margin-bottom: 6px;
-        }
-        .number-value .unit {
-            font-size: 18px; color: var(--gold); font-weight: 400;
-        }
-        .number-label { font-size: 11.5px; color: rgba(245,240,232,0.48); letter-spacing: 0.05em; }
+
 
         /* ===== CONCEPT ===== */
         #concept { background: var(--cream); }
@@ -808,6 +789,8 @@
             .sched-daygrid { grid-template-columns: 1fr !important; }
             .sched-weekdaygrid { grid-template-columns: 1fr !important; }
             .campaign-cards { grid-template-columns: 1fr !important; max-width: 320px !important; }
+            .other-cards { grid-template-columns: 1fr !important; }
+            .gallery-sub { white-space: normal !important; font-size: 13px; }
         }
 
         /* ===== MEMBERSHIP ===== */
@@ -1034,7 +1017,6 @@
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
             .hero-display { font-size: clamp(42px, 10vw, 72px); }
-            .numbers-inner { grid-template-columns: repeat(2, 1fr); }
             .concept-grid  { grid-template-columns: 1fr; gap: 40px; }
             .concept-visual { height: 280px; }
             .cv-main  { width: 80%; height: 220px; }
@@ -1631,7 +1613,7 @@
             <span class="section-tag">Progress</span>
             <h2 class="section-title white" style="margin-bottom:16px;">道場ができるまで</h2>
             <div class="section-divider center"></div>
-            <p class="section-subtitle white" style="white-space:nowrap;margin:0 auto 28px;">
+            <p class="section-subtitle white gallery-sub" style="white-space:nowrap;margin:0 auto 28px;">
                 80㎡のマットスペース＋更衣室・シャワー完備。工事の様子は随時更新中。
             </p>
             <a href="gallery.html" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-size:13px;font-weight:600;letter-spacing:0.1em;padding:11px 28px;text-decoration:none;transition:var(--transition);" onmouseover="this.style.background='rgba(201,168,76,0.08)'" onmouseout="this.style.background='transparent'">
@@ -2474,11 +2456,10 @@
 <script>
     const btt = document.getElementById('back-to-top');
     const lineFloat = document.getElementById('line-float');
-    // フローティングボタンはページ読み込み直後から表示
-    lineFloat.classList.add('visible');
     window.addEventListener('scroll', () => {
         const show = window.scrollY > 400;
         btt.classList.toggle('visible', show);
+        lineFloat.classList.toggle('visible', show);
     }, { passive: true });
 </script>
 
